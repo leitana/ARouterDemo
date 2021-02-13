@@ -1,0 +1,6 @@
+include ':app2'
+include ':lib2'
+include ':lib1'
+include ':commonlib'
+include ':app'
+rootProject.name = "ARouterDemo"

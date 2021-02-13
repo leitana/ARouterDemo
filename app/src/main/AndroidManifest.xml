@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.lx.arouterdemo">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:name=".MyApplication">
+
+        <activity android:name=".SchemeFilterActivity">
+            <!-- Scheme -->
+            <intent-filter>
+                <data
+                    android:host="m.asiainfo.com"
+                    android:scheme="arouter"/>
+
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+
+            <!-- App Links -->
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <data
+                    android:host="m.asiainfo.com"
+                    android:scheme="http"/>
+                <data
+                    android:host="m.asiainfo.com"
+                    android:scheme="https"/>
+            </intent-filter>
+
+        </activity>
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".NormalActivity1"/>
+        <activity android:name=".NormalActivity2"/>
+        <activity android:name=".NormalActivity3"/>
+        <activity android:name=".NormalActivity4"/>
+        <activity android:name=".LoginActivity"/>
+        <activity android:name=".InterceptorActivity"/>
+        <activity android:name=".WebViewActivity"/>
+        <activity android:name=".LowActivity"/>
+        <activity android:name=".GroupActivity"/>
+
+        <service android:name=".RouteService"
+            android:enabled="true"
+            android:exported="false" />
+    </application>
+
+</manifest>
